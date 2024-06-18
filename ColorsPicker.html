@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Palette</title>
+    <style>
+        .color-box {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #history {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Function to display "Hello world!" in the selected color and record history
+        function displayHello(color) {
+            const helloDiv = document.querySelector('#hello');
+            helloDiv.style.color = color; // Set text color
+            helloDiv.textContent = 'Hello world!'; // Display text
+
+            // Add the selected color to the history list
+            const historyDiv = document.querySelector('#history');
+            const colorElement = document.createElement('div');
+            colorElement.textContent = color; // Display color name
+            historyDiv.appendChild(colorElement);
+        }
+    </script>
+</head>
+<body>
+    <h1>Color Palette</h1>
+    <div>
+        <!-- Color selection boxes -->
+        <div class="color-box" style="background-color: red;" onclick="displayHello('red')"></div>
+        <div class="color-box" style="background-color: blue;" onclick="displayHello('blue')"></div>
+        <div class="color-box" style="background-color: green;" onclick="displayHello('green')"></div>
+        <div class="color-box" style="background-color: yellow;" onclick="displayHello('yellow')"></div>
+        <div class="color-box" style="background-color: purple;" onclick="displayHello('purple')"></div>
+        <div class="color-box" style="background-color: orange;" onclick="displayHello('orange')"></div>
+    </div>
+    <div id="hello"></div> <!-- Div to display "Hello world!" -->
+    <div id="history"></div> <!-- Div to display the history of selected colors -->
+</body>
+</html>
